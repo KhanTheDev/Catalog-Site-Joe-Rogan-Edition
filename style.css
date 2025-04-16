@@ -1,70 +1,315 @@
-html,
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
-.title {
+.main-header {
+  background: #1c1c1c;
+  padding: 30px 20px;
+  position: relative;
   text-align: center;
+}
+
+.main-header img {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.search-wrapper {
+  margin: 10px auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-wrapper > input[type="search"],
+.search-wrapper > select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+#navbar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
   margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
-  font-weight: normal;
-  color: white;
+  padding: 0;
+}
+
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+#navbar a:hover {
+  color: #ddd;
+}
+
+#main-content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+/* Episodes Section */
+#episodes {
+  margin-bottom: 40px;
+}
+
+#episodes h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #card-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-content {
-  padding: 20px;
-  font-family: "Verdana";
-  color: #777;
-}
-
-.card-content h2 {
-  margin-top: 0;
-  font-size: 20px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  display: block;
 }
 
+.card-content {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.title-container {
+  height: 40px;
+  overflow: hidden;
+}
+
+.card-content h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content .episode-number {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-content li {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Biography Section */
+#bio {
+  margin-bottom: 40px;
+}
+
+#bio h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bio-section {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.bio-section h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.bio-section p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bio-img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+
+/* Episode Ranker Section */
+#ranker {
+  margin-bottom: 40px;
+}
+
+#ranker h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#ranker-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#ranker-form label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#ranker-form input[type="text"],
+#ranker-form select {
+  padding: 8px;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#ranker-form button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#ranker-form button:hover {
+  background: #2980b9;
+}
+
+#ranker-result {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+/* Footer */
 .footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  text-align: center;
+  background: #333;
+  padding: 20px;
+  color: #fff;
 }
 
 button {
-  text-align: center;
-  background-color: #666;
+  background: #3498db;
+  color: #fff;
   border: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 40px;
-  border-radius: 10px;
-  color: white;
-  font-size: 22px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #main-content {
+    padding: 0 10px;
+  }
+  
+  .search-wrapper {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .search-wrapper > input[type="search"],
+  .search-wrapper > select {
+    width: 100%;
+  }
+  
+  .card-content h2 {
+    font-size: 1.2rem;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  #navbar {
+    top: 10px;
+    right: 10px;
+  }
+  .select-search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }  
 }

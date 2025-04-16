@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joe Rogan | Episode Ranker</title>
+    <meta name="description" content="Rank your favorite Joe Rogan episodes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;500&family=Roboto&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+  <body>
+    <header class="main-header">
+      <img src="https://yt3.googleusercontent.com/ea64FnqhZplwkKqktvq61PgNDNiFtnZL63CwJH4BLk8noNTJJCqzLeTJN8EWBLRfyeeIK7BzXw=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="Joe Rogan Logo">
+      <!-- Navigation Bar positioned at top right remains -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="biography.html">Biography</a></li>
+          <li><a href="ranker.html">Episode Ranker</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main id="main-content">
+      <section id="ranker">
+        <h2>Episode Ranker</h2>
+        <form id="ranker-form">
+          <div class="form-group">
+            <label for="user-name">Your Name:</label>
+            <input type="text" id="user-name" name="user-name" required>
+          </div>
+          <!-- Rank 1 -->
+          <div class="form-group">
+            <label for="rank-1">Rank 1:</label>
+            <input type="text" list="rank-1-datalist" id="rank-1" name="rank-1" placeholder="Search and select an episode..." required>
+            <datalist id="rank-1-datalist"></datalist>
+          </div>
+          <!-- Rank 2 -->
+          <div class="form-group">
+            <label for="rank-2">Rank 2:</label>
+            <input type="text" list="rank-2-datalist" id="rank-2" name="rank-2" placeholder="Search and select an episode..." required>
+            <datalist id="rank-2-datalist"></datalist>
+          </div>
+          <!-- Rank 3 -->
+          <div class="form-group">
+            <label for="rank-3">Rank 3:</label>
+            <input type="text" list="rank-3-datalist" id="rank-3" name="rank-3" placeholder="Search and select an episode..." required>
+            <datalist id="rank-3-datalist"></datalist>
+          </div>
+          <!-- Rank 4 -->
+          <div class="form-group">
+            <label for="rank-4">Rank 4:</label>
+            <input type="text" list="rank-4-datalist" id="rank-4" name="rank-4" placeholder="Search and select an episode..." required>
+            <datalist id="rank-4-datalist"></datalist>
+          </div>
+          <!-- Rank 5 -->
+          <div class="form-group">
+            <label for="rank-5">Rank 5:</label>
+            <input type="text" list="rank-5-datalist" id="rank-5" name="rank-5" placeholder="Search and select an episode..." required>
+            <datalist id="rank-5-datalist"></datalist>
+          </div>
+          <button type="submit">Submit Ranking</button>
+        </form>
+        <div id="ranker-result"></div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <button onclick="reset();">Reset</button>
+    </footer>
+  </body>
+</html>
